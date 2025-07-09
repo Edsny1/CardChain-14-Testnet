@@ -3,15 +3,16 @@
 
 # Download Script
 ```
-wget -O cardchain_setup.sh https://github.com/Edsny1/CardChain-14-Testnet/blob/Edsny/Autoinstall.sh
+wget -O cardchain_setup.sh https://raw.githubusercontent.com/Edsny1/CardChain-14-Testnet/Edsny/Autoinstall.sh
+
 ```
 
 ```
-chmod +x cardchain_setup.sh
+chmod +x Autoinstall.sh
 ```
 
 
 # Run Script
 ```
-./cardchain_setup.sh
+./Autoinstall.sh
 ```
