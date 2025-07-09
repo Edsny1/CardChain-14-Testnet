@@ -308,7 +308,7 @@ installation_complete() {
     echo -e "--commission-max-rate 0.2 \\"
     echo -e "--commission-max-change-rate 0.01 \\"
     echo -e "--min-self-delegation 1 \\"
-    echo -e "--pubkey \$(cardchaind tendermint show-validator) \\"
+    echo -e "--pubkey $(cardchaind tendermint show-validator) \\"
     echo -e "--moniker \"$MONIKER\" \\"
     echo -e "--identity \"\" \\"
     echo -e "--details \"\" \\"
