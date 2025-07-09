@@ -20,7 +20,7 @@ print_logo() {
     echo "| |   | |(_____  )|  ___  |( (   ) )|  ___  || (\ \) ||   _ (   "
     echo "| |   | |      ) || (   ) | \ \_/ / | (   ) || | \   ||  ( \ \  "
     echo "| (___) |/\____) || )   ( |  \   /  | )   ( || )  \  ||  /  \ \ "
-    echo "(_______)\_______)|/     \|   \_/   |/     \||/    )_)|_/    \_\"
+    echo "(_______)\_______)|/     \|   \_/   |/     \||/    )_)|_/    \_\\"
     echo -e "${NC}"
     echo
     echo -e "${YELLOW}============================================================${NC}"
@@ -54,8 +54,10 @@ print_error() {
 get_user_input() {
     print_step "Kullanıcı bilgileri alınıyor..."
     echo
-    read -p "$(echo -e ${CYAN}Moniker adınızı girin: ${NC})" MONIKER
-    read -p "$(echo -e ${CYAN}Port numaranızı girin (örn: 31): ${NC})" PORT
+    echo -e "${CYAN}Moniker adınızı girin: ${NC}"
+    read MONIKER
+    echo -e "${CYAN}Port numaranızı girin (örn: 31): ${NC}"
+    read PORT
     
     # Wallet adı moniker ile aynı olacak
     WALLET=$MONIKER
@@ -65,7 +67,8 @@ get_user_input() {
     print_info "Wallet: $WALLET"
     print_info "Port: $PORT"
     echo
-    read -p "$(echo -e ${YELLOW}Bilgiler doğru mu? (y/n): ${NC})" confirm
+    echo -e "${YELLOW}Bilgiler doğru mu? (y/n): ${NC}"
+    read confirm
     if [[ $confirm != "y" && $confirm != "Y" ]]; then
         print_error "Kurulum iptal edildi."
         exit 1
@@ -301,20 +304,20 @@ installation_complete() {
     echo -e "${YELLOW}Cüzdan listesi:${NC} cardchaind keys list"
     echo
     echo -e "${CYAN}Validator Oluşturma:${NC}"
-    echo -e "${YELLOW}cardchaind tx staking create-validator \\"
-    echo -e "--amount 1000000ubpf \\"
-    echo -e "--from $WALLET \\"
-    echo -e "--commission-rate 0.1 \\"
-    echo -e "--commission-max-rate 0.2 \\"
-    echo -e "--commission-max-change-rate 0.01 \\"
-    echo -e "--min-self-delegation 1 \\"
-    echo -e "--pubkey \$(cardchaind tendermint show-validator) \\"
-    echo -e "--moniker \"$MONIKER\" \\"
-    echo -e "--identity \"\" \\"
-    echo -e "--details \"\" \\"
-    echo -e "--chain-id cardtestnet-14 \\"
-    echo -e "--gas auto --gas-adjustment 1.5 \\"
-    echo -e "-y${NC}"
+    echo -e "${YELLOW}cardchaind tx staking create-validator \\\\${NC}"
+    echo -e "${YELLOW}--amount 1000000ubpf \\\\${NC}"
+    echo -e "${YELLOW}--from $WALLET \\\\${NC}"
+    echo -e "${YELLOW}--commission-rate 0.1 \\\\${NC}"
+    echo -e "${YELLOW}--commission-max-rate 0.2 \\\\${NC}"
+    echo -e "${YELLOW}--commission-max-change-rate 0.01 \\\\${NC}"
+    echo -e "${YELLOW}--min-self-delegation 1 \\\\${NC}"
+    echo -e "${YELLOW}--pubkey \\\$(cardchaind tendermint show-validator) \\\\${NC}"
+    echo -e "${YELLOW}--moniker \"$MONIKER\" \\\\${NC}"
+    echo -e "${YELLOW}--identity \"\" \\\\${NC}"
+    echo -e "${YELLOW}--details \"\" \\\\${NC}"
+    echo -e "${YELLOW}--chain-id cardtestnet-14 \\\\${NC}"
+    echo -e "${YELLOW}--gas auto --gas-adjustment 1.5 \\\\${NC}"
+    echo -e "${YELLOW}-y${NC}"
     echo
     echo -e "${GREEN}Sync durumunu kontrol etmek için birkaç dakika bekleyin!${NC}"
     echo
