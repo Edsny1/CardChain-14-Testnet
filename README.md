@@ -3,7 +3,7 @@
 
 # Download Script
 ```
-wget -O cardchain_setup.sh https://raw.githubusercontent.com/yourrepo/cardchain_setup.sh
+wget -O cardchain_setup.sh https://github.com/Edsny1/CardChain-14-Testnet/blob/Edsny/Autoinstall.sh
 ```
 
 ```
