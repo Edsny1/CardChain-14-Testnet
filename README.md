@@ -8,11 +8,11 @@ wget -O cardchain_setup.sh https://raw.githubusercontent.com/Edsny1/CardChain-14
 ```
 
 ```
-chmod +x Autoinstall.sh
+chmod +x cardchain_setup.sh
 ```
 
 
 # Run Script
 ```
-./Autoinstall.sh
+./cardchain_setup.sh
 ```
